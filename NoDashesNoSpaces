@@ -1,0 +1,55 @@
+/*
+ * Cedestinson Ductan
+ * Credit Card Processing without spaces or dashes
+ * I used a combination of if and while statements( Nested loops)
+ * to enter a string with dashes or space or perfect and to produce a string
+ * without dashes or space.
+ */
+
+
+import java.util.Scanner;
+
+public class CreditCardProcessing {
+	
+public static void main(String[]args) {
+	
+	Scanner in = new Scanner(System.in);
+	
+	System.out.println("Enter a Credit Card number to start, or 99 to exit");
+	
+	String creditCardNumber= in.nextLine();
+	
+	if(creditCardNumber.contains("99") )
+	{
+		System.exit(99);
+	}
+	else {
+	char i = 0;
+	while (i < creditCardNumber.length()) {
+		
+		char ch = creditCardNumber.charAt(i);
+		
+		
+		
+		if(ch==' ' || ch =='-' )
+		{
+			String before = creditCardNumber.substring(0, i);
+			String after = creditCardNumber.substring(i + 1);
+			creditCardNumber = before + after;
+}	
+		else {
+			i++;
+		}
+		
+	
+}
+	System.out.println(creditCardNumber);
+}
+	in.close();
+}
+}
+
+	
+	
+
+
